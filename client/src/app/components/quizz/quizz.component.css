@@ -1,0 +1,31 @@
+.quizz-header{
+  display: flex;
+  background-color: #ffc151;
+  font-size: 20pt;
+  font-weight: bold;
+  color: white;
+}
+.questionFin{
+    padding-top: 7px;
+    padding-bottom: 7px;
+    background-color: #ffc151;
+    color: white;
+    font-weight: bold;
+}
+.wrong{
+  color: red;
+}
+.correct{
+  color: rgb(13, 196, 13);
+}
+.white-text{
+  color:white;
+}
+.score{
+  color: #ffc151;
+  font-weight: bold;
+  font-size: 17pt;
+}
+.value{
+  color: #353535
+}

@@ -1,0 +1,14 @@
+<div *ngIf="question" class="qestionBody">
+  <div class="question">
+    {{question.question}}
+  </div>
+  <div class="propositions">
+    <div *ngFor="let proposition of question.propositions; index as i " class="proposition">
+      <label for="prop-{{i}}-{{question.id}}">
+        {{proposition}}
+      </label>
+      <input type="radio" name="prop-{{question.id}}" id="prop-{{i}}-{{question.id}}" value='{"label": "{{proposition}}", "index": {{i}}}' [(ngModel)]="reponse">
+    </div>
+  </div>
+  <button (click)="valider()" class="btn btn-success">Valider</button>
+</div>

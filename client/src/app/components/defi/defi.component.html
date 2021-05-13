@@ -1,0 +1,40 @@
+<!--<table class="table">
+  <tr *ngFor="let user of users; index as i ">
+
+    <td>
+      <span class="circle"></span>
+      <a class="connected-user" [routerLink]="['/user/', user.id]">
+        <app-avatar userAvatar = "{{user.avatar}}"></app-avatar>
+         {{user.identifiant}}
+      </a>
+    </td>
+    <td *ngIf="!defiedUser[user.id]">
+
+    </td>
+    <td ">
+
+    </td>
+
+  </tr>
+  </table>
+-->
+<div class="card">
+  <div class="card-header">
+    Défier un(e) ami(e)
+  </div>
+  <ul class="list-group list-group-flush" style="height: ;">
+    <li class="list-group-item d-flex justify-content-between" *ngFor="let user of users; index as i ">
+      <a class="connected-user" [routerLink]="['/user/', user.id]">
+        <app-avatar userAvatar = "{{user.avatar}}"></app-avatar>
+         {{user.identifiant}}
+      </a>
+      <span *ngIf="!defiedUser[user.id]">
+        <button *ngIf="user.id != userId" (click)="defier(user.id)" type="button" class="btn btn-success">Défier 🏆</button>
+      </span>
+      <span *ngIf="defiedUser[user.id]">
+        Défié(e)
+      </span>
+
+    </li>
+  </ul>
+</div>

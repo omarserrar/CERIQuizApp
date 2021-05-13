@@ -1,0 +1,35 @@
+.gamelevel{
+  width: 100%;
+  margin-top: 38px;
+  height: 100px
+}
+.quizz{
+  justify-content: center;
+  margin-top: 19%;
+  outline: none;
+  border-color: #9ecaed;
+  box-shadow: 0 0 10px #9ecaed;
+  border: 2px solid #dadada;
+  border-radius: 7px;
+}
+.message-loss{
+  color: red;
+  text-align: center;
+  font-size: 34pt;
+  font-weight: bold;
+}
+.message-win{
+  color: lawngreen;
+  text-align: center;
+  font-size: 34pt;
+  font-weight: bold;
+}
+.win-score{
+  color: lawngreen;
+}
+.lose-score{
+  color: red;
+}
+.score{
+  text-align: center;
+}

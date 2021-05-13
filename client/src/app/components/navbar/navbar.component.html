@@ -1,0 +1,53 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"/>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" [routerLink]="['/']" ><img src="/assets/logo.png" height="70"></a>
+  <ul class="navbar-nav mr-auto">
+    <li class="nav-item active">
+      <a class="nav-link" [routerLink]="['/']">Accueil <span class="sr-only">(current)</span></a>
+    </li>
+  </ul>
+  <span class="my-2 my-lg-0">
+    <div class="nav-item dropdown">
+    <button id="dropdownopen" (click)="openCloseDropDown()">
+      <app-avatar userAvatar = "{{user.avatar}}" ></app-avatar>
+            <span class="nav-item" >
+            {{user.prenom}}
+            </span>
+    </button>
+    <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="display: {{displayDropDown}};">
+      <a class="dropdown-item" [routerLink]="['/user']">Profile</a>
+      <span class="dropdown-item">
+      <app-logout></app-logout>
+    </span>
+    </div>
+  </div>
+  </span>
+</nav>
+<!--
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#"><img src="/assets/logo.png" height="70"></a>
+
+  <div class="navbar" >
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" [routerLink]="['/']">Home</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav ml-auto">
+        <li class="nav-item d-flex flex-row bd-highlight" *ngIf="user.prenom">
+            <a class="nav-link" [routerLink]="['/user']">
+
+
+            </a>
+
+        </li>
+        <li class="nav-item d-flex flex-row bd-highlight">
+
+        </li>
+    </ul>
+
+
+  </div>
+</nav>
+-->

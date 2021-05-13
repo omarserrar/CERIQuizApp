@@ -1,0 +1,21 @@
+.score{
+
+}
+.win{
+  background-color: #c7ffc7;
+}
+.lose{
+  background-color: #ffd7d7;
+}
+
+tbody{
+  height: 300px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: block;
+}
+thead, tbody tr {
+  display:table;
+  width:100%;
+  table-layout:fixed;/* even columns width , fix width of table too*/
+}

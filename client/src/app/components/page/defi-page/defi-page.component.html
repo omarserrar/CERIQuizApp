@@ -1,0 +1,22 @@
+<app-navbar></app-navbar>
+<div *ngIf="defiLoaded" class="container">
+    <div class="quizz">
+      <div *ngIf="quizzEnded">
+
+        <div class="resultat" *ngIf="win">
+          <div class="message-win">Bravo ! 🎉💪</div>
+          <div class="score">
+            Vous<span class="win-score">{{score}}</span> - <span class="lose-score">{{quizz.score_user_defiant}}</span>{{adversaire.identifiant}}
+          </div>
+
+        </div>
+        <div class="resultat" *ngIf="!win">
+          <div class="message-loss">{{adversaire.identifiant}} Gagne ! 😞</div>
+          <div class="score">
+          Vous<span class="lose-score">{{score}}</span> - <span class="win-score">{{quizz.score_user_defiant}}</span>{{adversaire.identifiant}}
+        </div>
+        </div>
+      </div>
+      <app-quizz [quizz]="quizz" [level]="level" (quizzEnd)="onQuizzEnd($event)" [isDefi]=true></app-quizz>
+    </div>
+</div>

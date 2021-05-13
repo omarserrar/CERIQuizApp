@@ -1,0 +1,63 @@
+<app-navbar></app-navbar>
+<div class="root" *ngIf="user">
+  <div class="container" *ngIf="!edit">
+    <div class="row picturerow">
+      <div class="col-sm">
+
+      </div>
+      <div class="col-sm" style="text-align: center;">
+        <span class="picture">
+          <app-avatar userAvatar="{{user.avatar}}" heigth= 200></app-avatar>
+
+        </span>
+        <span class="user-info">
+            <div class="font-weight-bold" style="margin-top: 10px;">{{user.nom.toUpperCase()}} {{user.prenom.toUpperCase()}} | {{user.age}}</div>
+            <div class="font-weight-bold username" style="margin-top: 4px;"><i>{{user.identifiant}} </i></div>
+            <div class="font-weight-bold username" style="margin-top: 7px;"> {{user.humeur}} </div>
+
+        </span>
+
+      </div>
+      <div class="col-sm">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm">
+        <app-historique-defi [user]="user"></app-historique-defi>
+      </div>
+      <div class="col-sm" style="overflow: scroll;">
+        <app-historique [userId]="user.id"></app-historique>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container" *ngIf="edit">
+  <div class="row">
+    <div class="col-sm">
+    </div>
+    <div class="col-sm">
+      <form>
+        <div class="mb-3">
+          <label for="avatar" class="form-label">Avatar</label>
+          <input type="text" class="form-control" id="avatar" value="{{user.avatar}}" [formControl]="editAvatar">
+        </div>
+        <div class="mb-3">
+          <label for="humeur" class="form-label">Humeur</label>
+          <input type="text" class="form-control" id="humeur" value="{{user.humeur}}" [formControl]="editHumeur">
+        </div>
+      </form>
+    </div>
+    <div class="col-sm">
+    </div>
+  </div>
+</div>
+<a (click)="startEdit()" class="float green" *ngIf="!edit">
+  <i class="fa fa-edit my-float"></i>
+</a>
+<a (click)="stopEdit()" class="float red" style="margin-right: 65px;" *ngIf="edit">
+  <i class="fa fa-times-circle my-float"></i>
+</a>
+<a (click)="saveEdit()" class="float green" *ngIf="edit">
+  <i class="fa fa-save my-float"></i>
+</a>

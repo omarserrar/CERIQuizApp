@@ -1,0 +1,48 @@
+<app-navbar></app-navbar>
+<div class="root">
+
+  <div class="container" *ngIf="!gameReady">
+    <div class="row">
+      <div class="col-sm">
+        <app-notifications></app-notifications>
+        <app-historique-defi></app-historique-defi>
+      </div>
+      <div class="col-sm">
+          <div>
+            <h4 style="    font-size: 38pt;">Nouvelle Partie</h4>
+          </div>
+          <div>
+            <button (click)="loadGame(1)" class="gamelevel btn btn-outline-success">Facile</button>
+          </div>
+          <div>
+           <button (click)="loadGame(2)" class="gamelevel btn btn-outline-warning">Moyen</button>
+          </div>
+          <div>
+            <button (click)="loadGame(3)" class="gamelevel btn btn-outline-danger">Difficile</button>
+          </div>
+      </div>
+      <div class="col-sm">
+        <app-connected-user></app-connected-user>
+        <app-top-ten></app-top-ten>
+      </div>
+    </div>
+</div>
+<div *ngIf="gameReady" class="container">
+
+  <div class="quizz">
+    <div *ngIf="quizzEnded">
+      <div class="action-buttons d-flex justify-content-center">
+      <button (click)="terminer()" class="btn btn-success" >Terminer</button>
+      <button (click)="rejouer()" style="margin-left: 9px;" class="btn btn-info" >Nouveau Quizz</button>
+    </div>
+    <div>
+      <div style="height: 300px; overflow-y: scroll;">
+        <app-defi [quizz]="quizz" [level]="level" [score]="score"></app-defi>
+        </div>
+    </div>
+    <hr>
+    </div>
+
+    <app-quizz [quizz]="quizz" [level]="level" (quizzEnd)="onQuizzEnd($event)"></app-quizz>
+  </div>
+</div>

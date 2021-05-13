@@ -1,0 +1,10 @@
+.connected-user{
+  color: black
+}
+
+.circle:before {
+  content: ' \25CF';
+  color: lawngreen;
+  font-size: 28px;
+  margin-right: 10px;
+}

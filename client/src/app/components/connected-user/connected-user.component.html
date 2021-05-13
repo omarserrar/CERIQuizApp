@@ -1,0 +1,18 @@
+
+<table class="table table-bordered">
+<tr>
+  <th>
+    {{connectedUsers.length}} Utilisateur(s) Connecté(s) 👥
+  </th>
+</tr>
+<tr *ngFor="let user of connectedUsers; index as i ">
+
+  <td>
+    <span class="circle"></span>
+    <a class="connected-user" [routerLink]="['/user/', user.id]">
+      <app-avatar userAvatar = "{{user.avatar}}"></app-avatar>
+       {{user.identifiant}}
+    </a>
+  </td>
+</tr>
+</table>

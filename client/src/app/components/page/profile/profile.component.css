@@ -1,0 +1,48 @@
+.root{
+  background-image: linear-gradient(-20deg, #ff2846 0%, #6944ff 100%);
+  box-sizing: inherit;
+}
+.row{
+  background-color: white;
+}
+.container{
+  padding-top:5%;
+  min-height: 50%;
+  font-family: 'Lucida Console', Monaco, monospace !important;
+}
+.picture{
+  position: relative;
+  top: -19%;
+}
+.username{
+  color: rgb(56, 56, 56)
+}
+.user-info-list{
+  list-style: none;
+}
+.user-info{
+  position: relative;
+  top: -15%;
+}
+.red{
+  background-color:red;
+}
+.green{
+  background-color: lawngreen;
+}
+.float{
+  font-size: 22pt;
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:40px;
+	right:40px;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
+}
+
+.my-float{
+	margin-top:17px;
+}

@@ -1,0 +1,27 @@
+.success-alert{
+    color: #ffffff;
+    background-color: #0cbd37;
+    border-color: #c3e6cb;
+    text-align: center;
+    font-family: 'Lucida Console', Monaco, monospace;
+    font-weight: bold;
+}
+.danger-alert{
+    color: #ffffff;
+    background-color: #dc0000;
+    border-color: #c3e6cb;
+    text-align: center;
+    font-family: 'Lucida Console', Monaco, monospace;
+    font-weight: bold;
+}
+.btn-circle.btn-sm { 
+    width: 21px;
+    height: 21px;
+    padding: 2px 0px;
+    border-radius: 15px;
+    font-size: 11px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    background-color: #00000026;
+} 

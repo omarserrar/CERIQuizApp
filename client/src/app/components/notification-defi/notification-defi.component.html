@@ -1,0 +1,11 @@
+ <div class="d-flex bd-highlight mb-3" *ngIf="!removed">
+  <div class="me-auto p-2 bd-highlight"><app-avatar userAvatar = "{{defi.user.avatar}}"></app-avatar> {{defi.user.identifiant}}</div>
+  <div class="p-2 bd-highlight"><span class="badge bg-info text-dark">{{difficulte}}</span> </div>
+  <div class="p-2 bd-highlight">
+    <button type="button" class="btn btn-success" (click)="accepterDefi()">Accepter</button>
+    <button type="button" class="btn btn-danger" (click)="refuserDefi()">Refuser</button>
+  </div>
+</div>
+<div *ngIf="removed">
+  Défi refusé !
+</div>

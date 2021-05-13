@@ -1,0 +1,8 @@
+<span class="nav-item" *ngIf="userAvatar else sansAvatar">
+  <img src="{{userAvatar}}" class="avatar rounded-circle" style="height: {{heigth}}px; width:  {{heigth}}px" alt="Avatar">
+</span>
+<ng-template #sansAvatar>
+  <span class="nav-item" >
+   <img src="/assets/avatar.jpg" class="avatar rounded-circle" style="height:  {{heigth}}px; width:  {{heigth}}px" alt="Avatar">
+  </span>
+</ng-template>

@@ -1,0 +1,31 @@
+<div *ngIf="historique==null">
+  Chargement...
+</div>
+
+<div *ngIf="historique!=null">
+  <table class="table table-bordered">
+  <thead>
+    <tr>
+      <th colspan="5">
+        Historique
+      </th>
+    </tr>
+    <tr>
+      <th scope="col">Date</th>
+      <th scope="col">Difficulté</th>
+      <th scope="col">Réponses correctes</th>
+      <th scope="col">Temps</th>
+      <th scope="col">Score</th>
+    </tr>
+  </thead>
+  <tbody *ngIf="historique.length > 0">
+    <tr *ngFor="let jeu of historique; index as i ">
+      <td>{{jeu.date_jeu}}</td>
+      <td>{{jeu.niveau_jeu}}</td>
+      <td>{{jeu.nb_reponses_corr}}</td>
+      <td>{{jeu.temps}}</td>
+      <td><b>{{jeu.score}}</b></td>
+    </tr>
+  </tbody>
+</table>
+</div>

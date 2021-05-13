@@ -1,0 +1,13 @@
+<table class="table table-bordered">
+  <tr>
+    <th>
+      Notifications 🔔
+    </th>
+  </tr>
+  <tr *ngFor="let defi of defis; index as i ">
+
+    <td>
+      <app-notification-defi [defi]="defi"></app-notification-defi>
+    </td>
+  </tr>
+  </table>

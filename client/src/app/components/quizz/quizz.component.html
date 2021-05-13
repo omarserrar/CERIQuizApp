@@ -1,0 +1,40 @@
+<div *ngIf="index<questions.length" class="quizz-container">
+  <div class="quizz-header d-flex">
+      <div class="p-2">Question {{index+1}} / {{questions.length}}</div>
+      <div class="ml-auto p-2"><app-chrono (onUpdate)="onChronoUpdate($event)"></app-chrono></div>
+  </div>
+<app-question [question]="questions[index]" (questionValidee)="onAnswer($event)"></app-question>
+
+</div>
+<div *ngIf="index>=questions.length">
+  <div *ngIf="resultat == null">
+    Quizz Termine, Chargement des résultats...
+  </div>
+  <div *ngIf="resultat">
+    <div style="text-align: center;" class="score">
+      <span class="value">{{correct}}</span> / <span class="value">{{questions.length}}</span>
+    </div>
+    <div class="d-flex justify-content-between score">
+      <div>Score <span class="value">{{resultat.score}}</span> 🏆</div>
+      <div>Temps Total <span class="value">{{chrono}}</span> ⌛</div>
+    </div>
+    <div *ngFor="let question of resultat.questions; index as i ">
+      <p class="questionFin">Question {{i+1}}: {{questions[i].question}} </p>
+      <span *ngIf="question.correct">
+        <p>Votre Réponse: <span class="correct"><b>{{reponses[i].reponse.label}} </b></span> <span class="badge bg-success white-text">Bonne Réponse</span> 👏 </p>
+        <div class="alert alert-info" role="alert">
+          ℹ️ {{question.anecdote}}
+        </div>
+      </span>
+      <span *ngIf="!question.correct">
+        <p>Votre Réponse: <span class="wrong"><b>{{reponses[i].reponse.label}} </b></span>  <span class="badge bg-danger white-text">Mauvaise Réponse</span> 🤦 </p>
+        <p>Réponse: {{question.bonneReponse}}</p>
+        <div class="alert alert-info" role="alert">
+          ℹ️ {{question.anecdote}}
+        </div>
+      </span>
+
+    </div>
+
+  </div>
+  </div>
